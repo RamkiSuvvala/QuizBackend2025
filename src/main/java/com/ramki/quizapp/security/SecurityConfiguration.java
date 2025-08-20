@@ -39,6 +39,8 @@ public class SecurityConfiguration {
 
                         // Rule 3: Restrict write access for question data to ADMINs only
                         .requestMatchers("/question/**").hasRole("ADMIN")
+                        
+                        .requestMatchers("/api/manage/**").hasRole("ADMIN")
 
                         // Rule 4: Allow any authenticated user to start a quiz
                         .requestMatchers(HttpMethod.GET, "/api/quiz").authenticated()
